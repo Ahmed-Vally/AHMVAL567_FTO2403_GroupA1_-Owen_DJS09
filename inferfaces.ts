@@ -4,9 +4,9 @@ enum LoyaltyUser {
     BRONZE_USER = 'BRONZE_USER'
 }
 
-export interface Review {
-    name: string;
-    stars: number;
-    loyaltyUser: LoyaltyUser;
-    date: string;
+export default interface Review {
+    name: string; 
+    stars: number; 
+    loyaltyUser: LoyaltyUser; 
+    date: string;   
 }
