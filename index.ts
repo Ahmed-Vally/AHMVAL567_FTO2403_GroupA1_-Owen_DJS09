@@ -1,4 +1,7 @@
-
+// Array Types
+// Can you add a stayedAt property to the you Object, that contains places you 
+// have stayed as strings, then add the correct key with assigned type to the 
+// existing Object Type?
 
 const returningUserDisplay = document.querySelector('#returning-user')
 const userNameDisplay = document.querySelector('#user')
@@ -36,18 +39,19 @@ showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 
 
 const you: {
-    firstName : string;
+    firstName: string;
     lastName: string;
     isReturning: boolean;
     age: number;
+    stayedAt: string[];
 } = {
-   firstName: 'Bobby',
-   lastName: 'Brown',
-   isReturning: true,
-   age: 35
+    firstName: 'Bobby',
+    lastName: 'Brown',
+    isReturning: true,
+    age: 35,
+    stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
 
-console.log(you.userName)
 
 function populateUser(isReturning : boolean, userName: string ) {
     if (isReturning){
@@ -56,4 +60,5 @@ function populateUser(isReturning : boolean, userName: string ) {
     userNameDisplay.innerHTML = userName
 }
 
-populateUser(you.isReturning, you.userName)
+populateUser(you.isReturning, you.firstName)
+
