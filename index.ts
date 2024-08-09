@@ -1,8 +1,7 @@
-
+// Enum Types
+import { showReviewTotal, populateUser } from './utils'
 const propertyContainer = document.querySelector('.properties')
 const footer = document.querySelector('.footer')
-
-import { showReviewTotal, populateUser } from './utils'
 let isOpen: boolean
 
 // Reviews
@@ -33,19 +32,39 @@ const reviews : {
 ]
 
 // User
-const you: {
-    firstName: string;
-    lastName: string;
-    isReturning: boolean;
-    age: number;
-    stayedAt: string[]
-} = {
+// const you: {
+//     firstName: string;
+//     lastName: string;
+//     isReturning: boolean;
+//     age: number;
+//     stayedAt: string[]
+// } = {
+//     firstName: 'Bobby',
+//     lastName: 'Brown',
+//     isReturning: true,
+//     age: 35,
+//     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
+// }
+
+const ADMIN = 'admin'
+const READ_ONLY = 'read-only'
+
+
+enum Permissions {
+    ADMIN,
+    READ_ONLY
+}
+
+const you = {
     firstName: 'Bobby',
     lastName: 'Brown',
+    permissions: Permissions.ADMIN,
     isReturning: true,
     age: 35,
     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
+
+
 
 // Array of Properties
 const properties : {
@@ -102,7 +121,6 @@ const properties : {
     }
 ]
 
-
 // Functions
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 
@@ -119,8 +137,6 @@ for (let i = 0; i < properties.length; i++) {
     propertyContainer.appendChild(card)
 }
 
-// location
-let currentLocation: [string, string, number] = ['London', '11:35', 17]
+let currentLocation : [string, string, number] = ['London', '11.03', 17]
 footer.innerHTML = currentLocation[0] + ' ' + currentLocation[1] + ' ' + currentLocation[2] + '°'
-
 
