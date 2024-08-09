@@ -1,6 +1,6 @@
 
-
 const propertyContainer = document.querySelector('.properties')
+const footer = document.querySelector('.footer')
 
 import { showReviewTotal, populateUser } from './utils'
 let isOpen: boolean
@@ -58,7 +58,7 @@ const properties : {
         code: number;
         country: string;
     };
-    contact: [number, string];
+    contact: [ number, string ];
     isAvailable: boolean;
 }[] = [
     {
@@ -71,7 +71,7 @@ const properties : {
             code: 45632,
             country: 'Colombia'
         },
-        contact: [+1123495082908, 'marywinkle@gmail.com'],
+        contact: [+112343823978921, 'marywinkle@gmail.com'],
         isAvailable: true  
     },
     {
@@ -84,7 +84,7 @@ const properties : {
             code: 343903,
             country: 'Poland'
         },
-        contact: [+1123495082908, 'garydavis@hotmail.com'],
+        contact: [+1298239028490830, 'garydavis@hotmail.com'],
         isAvailable: false 
     },
     {
@@ -97,7 +97,7 @@ const properties : {
             code: 35433,
             country: 'United Kingdom',
         },
-        contact: [ +1123495082908, 'andyluger@aol.com'],
+        contact: [+34829374892553, 'andyluger@aol.com'],
         isAvailable: true
     }
 ]
@@ -118,4 +118,9 @@ for (let i = 0; i < properties.length; i++) {
     card.appendChild(image)
     propertyContainer.appendChild(card)
 }
+
+// location
+let currentLocation: [string, string, number] = ['London', '11:35', 17]
+footer.innerHTML = currentLocation[0] + ' ' + currentLocation[1] + ' ' + currentLocation[2] + '°'
+
 
